@@ -1,0 +1,472 @@
+/* Variables en CSS */
+
+:root {                                    
+    --blanco: #FFFFFF;
+    --oscuro: #0E1212;
+    --primario: hsl(259, 81%, 54%); 
+    --secundario: rgb(122, 122, 122);
+}
+
+/* Globales */
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;                                  /* 1rem = 10px; */
+    font-family: 'Krub', sans-serif;
+    background-color: var(--oscuro);
+    color: var(--blanco)
+}
+
+/* Navegacion */
+
+.nav-bg img {
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    margin-left: 43rem;
+}
+
+.nav-bg img:hover {
+    filter: opacity(.8);
+    transform: scale(1.3);
+    transition: 0.4s;
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;                    /* Alinea horizontalmente */
+    position: relative;
+    align-items: center;
+}
+
+.navegacion-principal a {
+    color: var(--blanco);
+    text-decoration: none; 
+    font-size: 1.9rem; 
+    font-weight: 700;
+    padding: 2rem 3rem;
+    transition: 0.4s;
+}
+
+.navegacion-principal a:hover {
+    color: var(--primario);
+}
+
+@media (max-width: 768px) {
+
+    .btn_menu {
+        display: block;
+    }
+
+    .navegacion-principal {
+        flex-direction: column; 
+    }
+
+    .nav-bg img {
+        width: 4rem;
+        height: 4rem;
+        margin-left: 0;
+    }
+}
+
+/* Bio */
+
+.bio__titulo,
+.bio__subtitulo,
+.bio__parrafo {
+    margin-left: 2rem;
+}
+
+.bio__titulo {
+    color: var(--primario);
+    font-size: 10rem;
+    font-family: 'Encode Sans SC', sans-serif;
+    letter-spacing: 1rem;
+    margin-bottom: 0;
+    animation: colorchange 2s infinite alternate;
+}
+
+@keyframes colorchange {
+    100% { 
+        color: rgb(146, 24, 170); 
+    }
+} 
+
+@media (max-width: 768px) {
+    .bio__titulo {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .bio__titulo {
+        font-size: 5rem;
+        text-align: center;
+    }
+}
+
+.bio__subtitulo {
+    color: var(--secundario);
+    font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+    .bio__subtitulo {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .bio__subtitulo {
+        text-align: center;
+    }
+}
+
+.bio__parrafo {
+    color: var(--primario);
+    font-size: 2rem;
+    padding-top: 5.5rem;
+}
+
+/* Servicios */
+
+#servicios {
+    margin-top: 10rem;
+}
+
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    column-gap: 5rem;
+}
+
+.servicios__titulo {
+    margin-left: 2rem;
+    color: var(--blanco);
+    font-size: 4rem;
+}
+
+.servicio,
+.servicio p {
+    text-align: center;
+}
+
+.servicio h3 {
+    color: var(--blanco);
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.servicio p {
+    line-height: 2;                           /* Interlineado */
+}
+
+.servicio .iconos {
+    height: 8rem;
+    width: 8rem;
+    background-color: var(--primario);
+    border-radius: 50%; 
+    display: flex;
+    justify-content: space-evenly ;
+    align-items: center; 
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); 
+        column-gap: 5rem;
+    }
+
+    .servicios__titulo {
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); 
+        column-gap: 5rem;
+    }
+
+    .servicios__titulo {
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+/* Tecnologias */
+
+.tecnologias {
+    display: grid;
+    grid-template-columns: repeat(3, 1.5fr); 
+    grid-gap: 2rem;
+    text-align: center;
+}
+
+.tecnologias__titulo {
+    margin-left: 2rem;
+    color: var(--blanco);
+    font-size: 4rem;
+}
+
+.tecnologias img {
+    width: 18rem;
+    height: 18rem;
+    border-radius: 1rem;
+}
+
+.tecnologias__iconos:hover {
+    border-radius: 25%;
+    border: 3px solid var(--primario);
+    transition: border-radius .3s;
+}
+
+@media (max-width: 768px) {
+    .tecnologias {
+        grid-template-columns: repeat(2, 1.5fr); 
+    }
+
+    .tecnologias__titulo {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .tecnologias {
+        grid-template-columns: repeat(2, 1.5fr); 
+        grid-gap: 1rem;
+    }
+
+    .tecnologias img {
+        width: 14rem;
+        height: 14rem;
+        border-radius: 1rem;
+    }
+
+    .tecnologias__titulo {
+        text-align: center;
+    }
+}
+
+/* Proyectos */
+
+.proyectos__titulo {
+    margin-left: 2rem;
+    color: var(--blanco);
+    font-size: 4rem;
+}
+
+.carrousel {
+    text-align: center;
+}
+
+.carrousel__principal {
+    overflow-x: hidden;
+    max-width: 80rem;
+    margin: 0 auto;
+    box-shadow: 0px 5px 15px 0px rgba(248, 248, 248, 0.54);
+    background-color: var(--negro);
+    border-radius: 1rem;
+}
+
+.carrousel__imagenes {
+    display: flex;
+    transition: all .5s ease;
+    transform: translateX(0%); 
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrousel__principal:hover {
+    border: 3px solid var(--primario);
+    transition: border .3s;
+    cursor: pointer; 
+}
+
+.carrousel__imagen {
+    max-width: 100%;
+    max-height: 600px;
+}
+
+.carrousel__imagen-oculta {
+    display: none;
+}
+
+.carrousel__punto {
+    background-color: rgba(107, 107, 107, 0.6);
+    color: var(--blanco);
+    border-radius: 50%;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;  
+    margin-top: 2rem;
+}
+
+.boton__activo {
+    background-color: var(--primario);
+}
+
+@media (max-width: 768px) {
+    .proyectos__titulo {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .proyectos__titulo {
+        text-align: center;
+    }
+}
+
+/* Contacto */
+
+.contacto__titulo {
+    margin-left: 2rem;
+    color: var(--blanco);
+    font-size: 4rem;
+}
+
+.formulario {
+    width: min(50rem, 100%);                        /* Utiliza el valor mas pequeño y si no, el 100% */
+    margin-left: 10rem;;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 5px 15px 0px rgba(248, 248, 248, 0.54);
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    color: var(--secundario);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.campo textarea {
+    height: 20rem;
+}
+
+.input-text {
+    width: 100%;
+    border: 1px solid var(--primario);
+    padding: 1.5rem;
+    border-radius: .5rem;
+    background-color: transparent;
+    color: var(--blanco);
+}
+
+.boton {
+    background-color: transparent;
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 100%;                                /* Puede cambiar con responsive */  
+    text-align: center;
+    border: none;
+    box-shadow: 0px 2px 3px 3px rgba(31, 1, 196, 0.54);
+    cursor: pointer;
+}
+
+.contacto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contacto__imagen {
+    width: 50rem;
+    height: 50rem;
+}
+
+@media (max-width: 768px) {
+    .contacto {
+        display: grid;
+        grid-template-columns: repeat(1, 2fr); 
+    }
+
+    .formulario, 
+    .contacto__imagen {
+        margin: 0 auto;
+    }
+
+    .contacto__imagen {
+        width: 40rem;
+        height: 40rem;
+    }
+
+   .formulario {
+        width: min(40rem, 100%);   
+   }
+
+   .contacto__titulo {
+        text-align: center;   
+   }
+}
+
+@media (max-width: 480px) {
+    .formulario {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); 
+        width: min(30rem, 100%); 
+    }
+
+    .contacto__imagen {
+        margin: 0 auto;
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .contacto__titulo {
+        text-align: center;   
+   }
+}
+
+/* Footer */
+
+.footer {
+    margin-top: 10rem;
+    text-align: center;
+}
+
+.footer__imagen {
+    height: 46px;
+    width: 46px;
+}
+
