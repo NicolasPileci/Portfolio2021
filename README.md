@@ -2,4 +2,4 @@
 
 Portfolio personal. Realizado con HTML, CSS y JavaScript.
 
-**Podes verlo online en este link** --> 
+**Podes verlo online en este link** --> https://nicolaspileci.netlify.app/
